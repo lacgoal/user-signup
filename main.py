@@ -2,8 +2,6 @@ from flask import Flask, request, redirect, render_template
 import cgi
 import os
 
-
-
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -18,7 +16,6 @@ def display_signup_form():
 
 @app.route('/signup', methods=['POST'])
 def validate_info():
-
     username = request.form['username']
     password = request.form['password']
     verify_password = request.form['verify_password']
@@ -49,7 +46,6 @@ def validate_info():
         if ('@' not in email or '.' not in email or ' ' in email or (len(email) < 3 or len(email) >20)):
             email_error = "That's not a valid email."
             email = ''
-
 
     if not username_error and not password_error and not verify_password_error and not email_error:
         username = username
