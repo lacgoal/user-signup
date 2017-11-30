@@ -72,9 +72,4 @@ def valid_entry():
     username = request.args.get('username')
     return render_template('welcome.html', username=username)
 
-###Still need to complete
-# preserve username and email that the user typed
-# clear password fields for security reasons.
-
-
 app.run()
